@@ -8,7 +8,7 @@
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 import TestRefVue from "./components/TestRef.vue";
-import ParentTemp from './test_emit/ParentTemp.vue'
+import ParentTemp from './testEmit/ParentTemp.vue'
 export default {
   name: "App",
   components: {

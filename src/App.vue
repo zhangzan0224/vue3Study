@@ -1,18 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-  <TestRefVue></TestRefVue>
-  <ParentTemp></ParentTemp>
+  <!-- <TestRefVue></TestRefVue>
+  <ParentTemp></ParentTemp> -->
+  <router-view></router-view>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import TestRefVue from "./components/TestRef.vue";
-import ParentTemp from './testEmit/ParentTemp.vue'
+// import TestRefVue from "./components/TestRef.vue";
+// import ParentTemp from './testEmit/ParentTemp.vue'
 export default {
   name: "App",
   components: {
-    TestRefVue,ParentTemp
   },
 };
 </script>

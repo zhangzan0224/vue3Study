@@ -20,6 +20,6 @@ export default {
     };
     return { counter, add1, decre1 };
   },
-  components:{ChildTemp}
+  components: { ChildTemp },
 };
 </script>

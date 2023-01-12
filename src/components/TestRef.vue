@@ -5,12 +5,16 @@
   </div>
 </template>
 <script>
-import { ref } from "vue";
+import { ref , reactive} from "vue";
 export default {
   setup() {
     const userName = ref("zhangsan");
+    const job =  reactive({
+      type:'前端工程师',
+      salary:'30K'
+    })
     const showName = () => {
-      alert(`我叫${userName.value}`);
+      alert(`我叫${userName.value},我的工作是${job.type}`);
     };
     const changeName = () => {
       console.log(userName);
@@ -19,6 +23,7 @@ export default {
       userName,
       showName,
       changeName,
+      job
     };
   },
 };

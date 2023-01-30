@@ -7,23 +7,24 @@
     </div>
   </div>
 </template>
-<script setup>
-import { ref, defineEmits } from "vue";
+<script>
+import { ref } from "vue";
+export default {
+  emits: ["add1", "decre1"],
+  setup(props, { emit }) {
+    // 1、定义的属性
+    const num = ref(0);
+    // 3、定义新增和递减计数方法
+    const increment = () => {
+      num.value++;
+      emit("add1", num.value);
+    };
 
-// 1、定义的属性
-const num = ref(0);
-
-// 2、定义发射给父组件的方法
-const emits = defineEmits(["add1", "decre1"]);
-
-// 3、定义新增和递减计数方法
-const increment = () => {
-  num.value++;
-  emits("add1", num.value);
-};
-
-const decrement = () => {
-  num.value--;
-  emits("decre1", num.value);
+    const decrement = () => {
+      num.value--;
+      emit("decre1", num.value);
+    };
+    return { num, increment, decrement };
+  },
 };
 </script>

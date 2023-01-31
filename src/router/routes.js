@@ -15,6 +15,12 @@ const routes = [
     name: 'watchTest',
     path: '/watchtest',
     component: () => import('@/testWatch/index.vue')
+  },
+  // 测试hooks
+  {
+    name: 'TestHooks',
+    path: '/hookstest',
+    component: () => import('@/testHooks/index.vue')
   }
 ]
 

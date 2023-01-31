@@ -14,10 +14,39 @@
   </div>
 </template>
 <script>
-import { ref, watch, reactive } from "vue";
+import {
+  ref,
+  watch,
+  reactive,
+  onBeforeMount,
+  onMounted,
+  onBeforeUpdate,
+  onUpdated,
+  onBeforeUnmount,
+  onUnmounted,
+} from "vue";
+
 export default {
   name: "TestWatch",
   setup() {
+    onBeforeMount(() => {
+      console.log("----onBeforeMount-----");
+    });
+    onMounted(() => {
+      console.log("------onMounted--------");
+    });
+    onBeforeUpdate(() => {
+      console.log("------onBeforeUpdate--------");
+    });
+    onUpdated(() => {
+      console.log("------onUpdated--------");
+    });
+    onBeforeUnmount(() => {
+      console.log("------onBeforeUnmount--------");
+    });
+    onUnmounted(() => {
+      console.log("------onUnmounted--------");
+    });
     let sum = ref(0);
     let msg = ref("你好啊");
     const person = reactive({
@@ -72,6 +101,31 @@ export default {
       person,
     };
   },
+  // 不适用组合式api的生命周期钩子
+  /* beforeCreate() {
+    console.log("------beforeCreate--------");
+  },
+  created() {
+    console.log("------created--------");
+  },
+  beforeMount() {
+    console.log("------beforeMount--------");
+  },
+  mounted() {
+    console.log("------mounted--------");
+  },
+  beforeUpdate() {
+    console.log("------beforeUpdate--------");
+  },
+  updated() {
+    console.log("------updated--------");
+  },
+  beforeUnmount() {
+    console.log("------------beforeUnmount-------");
+  },
+  unmounted() {
+    console.log("------unmounted--------");
+  }, */
 };
 </script>
 <style lang="scss" scoped></style>

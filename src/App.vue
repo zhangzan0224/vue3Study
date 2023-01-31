@@ -10,11 +10,12 @@
 // import HelloWorld from './components/HelloWorld.vue'
 // import TestRefVue from "./components/TestRef.vue";
 // import ParentTemp from './testEmit/ParentTemp.vue'
-import SetupDemo from "@/testsetup/SetupDemo";
+import SetupDemo from '@/testsetup/SetupDemo'
+
 export default {
-  name: "App",
-  components: { SetupDemo },
-};
+  name: 'App',
+  components: { SetupDemo }
+}
 </script>
 
 <style>

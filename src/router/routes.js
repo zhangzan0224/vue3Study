@@ -21,6 +21,11 @@ const routes = [
     name: 'TestHooks',
     path: '/hookstest',
     component: () => import('@/testHooks/index.vue')
+  },
+  {
+    name: 'TestSuspense',
+    path: '/suspensetest',
+    component: () => import('@/testSuspense/index.vue')
   }
 ]
 

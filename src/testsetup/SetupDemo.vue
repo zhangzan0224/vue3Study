@@ -1,6 +1,6 @@
 <template>
   <div class='container'>
-    <span>abc</span>
+    <span>SetupDemo</span>
   </div>
 </template>
 <script>

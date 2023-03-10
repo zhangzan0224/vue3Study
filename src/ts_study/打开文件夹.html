@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>点我选择文件夹</button>
+  </body>
+  <script>
+    const btn = document.querySelector('button')
+    btn.onclick = async function () {
+      try {
+        const handle = await window.showDirectoryPicker()
+        // console.log(handle)
+        const root = await processHandle(handle)
+        console.log(root)
+        const fileHandle = root.children[0]
+        const file = await fileHandle.getFile()
+        // 然后通过 fileReader 去读取
+        const fileReader = new FileReader()
+
+        fileReader.onload = (e) => {
+          console.log(e.target.result)
+        }
+
+        fileReader.readAsText(file)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    async function processHandle(handle) {
+      // console.log(handle)
+      // 如果是文件的话就直接返回
+      if (handle.kind === 'file') {
+        return handle
+      }
+      // 每一个 handle 下面是一扇门,通过入口打开才能看到东西,在是目录的原型对象上
+      const iter = handle.entries()
+      handle.children = []
+      for await (item of iter) {
+        handle.children.push(await processHandle(item[1]))
+      }
+      return handle
+    }
+  </script>
+</html>

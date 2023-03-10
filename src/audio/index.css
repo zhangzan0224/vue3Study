@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  text-align: center;
+  background: #ccc;
+}
+
+.container {
+  height: 400px;
+  overflow: hidden;
+}
+
+.container ul {
+  list-style: none;
+  transition: 0.6s;
+}
+
+.container li {
+  list-style: none;
+  height: 30px;
+  line-height: 30px;
+}
+
+.container li.active {
+  color: #fff;
+  transform: scale(1.2);
+}

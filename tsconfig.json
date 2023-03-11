@@ -6,11 +6,12 @@
               * 表示任意文件
       "exclude" 不需要被编译的文件目录
           默认值：["node_modules", "bower_components", "jspm_packages"]
-
+    其他的 json 一般情况下不会添加注释
   */
   "include": [
     "./src/**/*"
   ],
+  /* 代表着不包含的文件 */
   //  "exclude": [
   //    "./src/hello/**/*"
   //  ]
@@ -35,7 +36,7 @@
     //es2018.regexp', 'es2019.array', 'es2019.object', 'es2019.string', 'es2019.symbol', 'es2020.bigint', 'es2020.promise', 'es2020.s
     //haredmemory', 'es2020.string', 'es2020.symbol.wellknown', 'es2020.intl', 'esnext.array', 'esnext.symbol', 'esnext.asynciterable
     //', 'esnext.intl', 'esnext.bigint', 'esnext.string', 'esnext.promise', 'esnext.weakref'
-        "lib": ["es6", "dom"],
+    // "lib": ["es6", "dom"], 一般情况下不需要指定,否则会导致其他想用的用不了
 
     "experimentalDecorators": true,
     // outDir 用来指定编译后文件所在的目录

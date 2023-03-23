@@ -4,7 +4,7 @@ module.exports = {
   entry: './src/index.js', // 指定入口文件
   output: {
     path: path.resolve(__dirname, 'dist'), // 指定打包文件所在的目录
-    filename: 'bundle.js'
+    filename: 'bundle.js' // 打包后的文件名
   },
   // webpack打包时使用的模块
   module: {
@@ -12,16 +12,9 @@ module.exports = {
     rules: [
       // ts的加载规则
       {
-        test: /\.ts$/, // 3
-        exclude: /node_modules/, // 4
-        use: {
-          loader: 'ts-loader', // 5
-          options: {
-            // 6
-            presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-proposal-class-properties']
-          }
-        }
+        test: /\.ts$/, // 指定规则生效的文件
+        exclude: /node_modules/, // 排除node_modules目录
+        use: 'ts-loader'
       },
       // css的加载规则
       {

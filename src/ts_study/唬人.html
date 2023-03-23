@@ -1,0 +1,43 @@
+<!--
+ * @Description: 唬人的 css 样式
+ * @Version: 2.0
+ * @Author: ZhangZan
+ * @Date: 2023-03-23 12:09:18
+ * @LastEditors: ZhangZan
+ * @LastEditTime: 2023-03-23 13:27:55
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .header {
+        color: #333;
+        line-height: 2;
+      }
+      .header span {
+        /*  这里的 no-repeat right bottom 是什么意思? 为什么要这么写?  什么意思,下方的代码下方的代码,是在 span 上面设置一个背景,这个背景是一个线性渐变,从左到右,从红色到绿色,到蓝色,然后这个背景是从右下角开始的,也就是从右下角开始变化 */
+        background: linear-gradient(to right, #f00, #0f0, #00f) no-repeat right
+          bottom;
+        background-size: 0px 2px;
+        transition: background-size 1s;
+      }
+      .header span:hover {
+        /* 进入的时候,背景的大小变成 100%,也就是整个 span 的宽度
+        进入的时候,将背景的位置改为左侧,也就是从左侧开始变化 */
+        background-size: 100% 2px;
+        background-position-x: left;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 class="header">
+      <span
+        >十年后,你会发现Css的样式是最难学的,十年后,你会发现Css的样式是最难学的,十年后,你会发现Css的样式是最难学的,十年后,你会发现Css的样式是最难学的</span
+      >
+    </h2>
+  </body>
+</html>

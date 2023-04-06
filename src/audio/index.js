@@ -3,11 +3,9 @@
  * @Version: 2.0
  * @Author: ZhangZan
  * @Date: 2023-03-04 22:50:07
- * @LastEditors: wuyue.nan
+ * @LastEditors:Zhangzan
  * @LastEditTime: 2023-03-05 17:23:18
  */
-
-
 /**
  * 处理原始的歌词去处理每一条数据,返回的是歌曲的歌词的数组
  */

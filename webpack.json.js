@@ -42,5 +42,9 @@ module.exports = {
         ]
       }
     ]
+  },
+  // resolve
+  resolve: {
+    extensions: ['.ts'] // 配置ts文件可以作为模块加载
   }
 }

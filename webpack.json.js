@@ -1,5 +1,6 @@
 const path = require('path')
-
+const HTMLWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 module.exports = {
   entry: './src/index.js', // 指定入口文件
   output: {
@@ -46,5 +47,14 @@ module.exports = {
   // resolve
   resolve: {
     extensions: ['.ts'] // 配置ts文件可以作为模块加载
-  }
+  },
+  // 配置webpack得插件
+  plugins: [
+    new CleanWebpackPlugin(), // 每次打包前清空dist目录
+    new HTMLWebpackPlugin({
+        title: 'Webpack App', // 默认标题
+        template: './src/index.html' // 指定模板文件
+      }
+    )
+  ]
 }
